@@ -44,7 +44,7 @@ include 'connect.php';
                 <td>' . $email . '</td>
                 <td>' . $phone . '</td>
                 <td>
-                <button class="btn btn-primary"><a class="text-light" href="update.php">Update</a></button>
+                <button class="btn btn-primary"><a class="text-light" href="update.php?updateid='.$id.'">Update</a></button>
                 <button class="btn btn-danger"><a  href="delete.php? deleteid=' . $id . ' " class="text-light">Delete</a></button>
             </td>
               </tr>';
