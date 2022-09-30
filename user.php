@@ -9,7 +9,8 @@
         $sql="insert into `crud`(name,email,phone,password) values('$name', '$email','$phone','$password')";
         $result=mysqli_query($conn,$sql);
         if($result){
-            echo "Data inserted successfully";
+            // echo "Data inserted successfully";
+            header('location:display.php');
         }else{
             die(mysqli_error($conn));
         }
