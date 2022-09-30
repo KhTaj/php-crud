@@ -1,5 +1,5 @@
 <?php
-    include 'connect.php';
+include 'connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,47 +17,47 @@
         <button class="btn btn-primary my-5"> <a href="user.php" class="text-light">Add user</a></button>
 
         <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Sl no</th>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Operations</th>
-    </tr>
-  </thead>
-  <tbody>
+            <thead>
+                <tr>
+                    <th scope="col">Sl no</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Operations</th>
+                </tr>
+            </thead>
+            <tbody>
 
-    <?php
-    
-        $sql="Select * from `crud`";
-        $result=mysqli_query($conn,$sql);
-        if($result){
-            while($row=mysqli_fetch_assoc($result)){
-                $id=$row['id'];
-                $name=$row['name'];
-                $email=$row['email'];
-                $phone=$row['phone'];
-                echo '<tr>
-                <th scope="row">'.$id.'</th>
-                <td>'.$name.'</td>
-                <td>'.$email.'</td>
-                <td>'.$phone.'</td>
+                <?php
+
+                $sql = "Select * from `crud`";
+                $result = mysqli_query($conn, $sql);
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $id = $row['id'];
+                        $name = $row['name'];
+                        $email = $row['email'];
+                        $phone = $row['phone'];
+                        echo '<tr>
+                <th scope="row">' . $id . '</th>
+                <td>' . $name . '</td>
+                <td>' . $email . '</td>
+                <td>' . $phone . '</td>
                 <td>
-                <button class="btn btn-primary"><a class="text-light" href="">Update</a></button>
-                <button class="btn btn-danger"><a class="text-light" href="">Delete</a></button>
+                <button class="btn btn-primary"><a class="text-light" href="update.php">Update</a></button>
+                <button class="btn btn-danger"><a  href="delete.php? deleteid=' . $id . ' " class="text-light">Delete</a></button>
             </td>
               </tr>';
-            }
-        }
-    
-    ?>
+                    }
+                }
 
-   
-     
+                ?>
 
-  </tbody>
-</table>
+
+
+
+            </tbody>
+        </table>
 
     </div>
 
